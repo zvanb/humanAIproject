@@ -34,16 +34,21 @@ def index():
     return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
-def predict():
-    data = request.get_json()
-    user_symptoms = data.get('symptoms')
+def predict_illness():
+    # Get the symptoms from the request sent by JavaScript
+    symptoms = request.json.get('symptoms')
 
-    # Perform prediction with your model using the received symptoms
-    # Replace this with your actual model prediction logic
-    #prediction = predict_with_your_model(user_symptoms)
+    #Your prediction logic here using the symptoms...
+    processed_input = symptoms[:132]  # Ensure only the first 132 features are used
+    
+    # Reshape the input to be a 2D array (required by scikit-learn)
+    user_input = [processed_input]  # Convert to a list of lists
+    
+    # Use the trained model to make predictions
+    predicted_illness = model.predict(user_input)
 
-    # Return the prediction result as JSON
-    return jsonify({'prediction': "hello world"})
+    return jsonify({'prediction': predicted_illness[0]})
+
 
 if __name__ == '__main__':
     app.run(port=8000, debug=True)
