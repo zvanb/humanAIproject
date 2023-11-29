@@ -4,8 +4,9 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 import joblib
 
+
 #load in data to df
-data = pd.read_csv('diseaseData.csv')
+data = pd.read_csv('data/diseaseData.csv')
 
 # Split the data into symptoms and illness
 X = data.iloc[:, :-1]  #symptoms
@@ -24,7 +25,8 @@ accuracy = accuracy_score(y_test, predictions)
 print(f"Accuracy: {accuracy:.2f}")
 
 #save trained model to models/trainedModel.pk1
-joblib.dump(model, 'models/illness_prediction_model.pkl')
+joblib.dump(model, 'models/trainedModel.pkl')
+    
 
 
 

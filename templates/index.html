@@ -3,14 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Symptom Checker</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Symptom Checker</h1>
-    <form action="/" method="post">
-        <label for="symptoms">Enter Symptoms:</label>
-        <input type="text" id="symptoms" name="symptoms">
-        <input type="submit" value="Check">
-    </form>
+
+    <input type="text" id="symptomInput" list="symptomsList" placeholder="Search for a symptom...">
+    <datalist id="symptomsList">
+        <!-- List of symptoms -->
+    </datalist>
+
+    <button type="button" id="addSymptomButton">Add Symptom</button>
+
+    <div>
+        <h3>Selected Symptoms:</h3>
+        <ul id="selectedSymptoms"></ul>
+    </div>
+
+    <button type="button" id="predictButton">Predict Illness</button>
+
+    <script src="../static/javascript.js"></script>
 </body>
 </html>
