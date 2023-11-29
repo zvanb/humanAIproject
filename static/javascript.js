@@ -21,19 +21,27 @@ populateDatalist();
 
 // Function to add a symptom to the list
 function addSymptom() {
-    const symptomInput = document.getElementById('symptomInput').value.trim().toLowerCase(); // Convert to lowercase
+    const symptomInput = document.getElementById('symptomInput').value.trim().toLowerCase();
     const symptomExists = symptomsArray.some(symptom => symptom.toLowerCase() === symptomInput);
-    if (symptomInput && symptomExists) {
-        // Add the symptom only if it exists in the predefined symptoms list
-        const selectedSymptoms = document.getElementById('selectedSymptoms');
+    const selectedSymptoms = document.getElementById('selectedSymptoms');
+
+    const isSymptomAlreadyAdded = (symptom) => {
+        const symptoms = Array.from(selectedSymptoms.children);
+        return symptoms.some(item => item.textContent.toLowerCase() === symptom.toLowerCase());
+    };
+
+    if (symptomInput && symptomExists && !isSymptomAlreadyAdded(symptomInput)) {
         const listItem = document.createElement('li');
         listItem.textContent = symptomInput;
         selectedSymptoms.appendChild(listItem);
-        document.getElementById('symptomInput').value = ''; // Clear the input field
+        document.getElementById('symptomInput').value = '';
+    } else if (isSymptomAlreadyAdded(symptomInput)) {
+        alert('This symptom is already added.');
     } else {
         alert('Please enter a valid symptom from the list.');
     }
 }
+
 
 // Function to display selected symptoms
 function displaySelectedSymptoms() {
@@ -92,3 +100,12 @@ document.getElementById('addSymptomButton').addEventListener('click', addSymptom
 
 // Event listener for Predict Illness button click
 document.getElementById('predictButton').addEventListener('click', predictIllness);
+
+//Event lister for clearing search and refreshing page click
+document.addEventListener('DOMContentLoaded', function() {
+    const refreshButton = document.getElementById('refreshButton');
+
+    refreshButton.addEventListener('click', function() {
+        location.reload(); // Reloads the page when the button is clicked
+    });
+});
