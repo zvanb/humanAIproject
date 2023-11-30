@@ -1,0 +1,119 @@
+/* Resetting default margins and paddings */
+html, body, h1, h3, ul, li, button, input, datalist {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header styles */
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Input and button container */
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Input styles */
+#symptomInput {
+    padding: 12px; /* Keep the padding as it was */
+    margin: 5px;
+    flex: 3; /* Adjusted width */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Font size remains the same */
+    width: 90%; /* Increased width */
+}
+
+/* Buttons styles */
+#addSymptomButton, #refreshButton {
+    padding: 10px 25px; /* Adjust padding */
+    margin: 5px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: auto; /* Adjust width to fit text */
+    flex: 1; /* Equal width for both buttons */
+    height: 45px; /* Same height as the Add Symptom button */
+    font-size: 14px; /* Reduced text size */
+}
+
+#addSymptomButton {
+    background-color: #4CAF50; /* Green color */
+}
+
+#refreshButton {
+    background-color: #FF0000; /* Red color */
+}
+
+/* Main content container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Section headings */
+h3 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #007bff;
+}
+
+/* Symptom list */
+#selectedSymptoms {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+#predictButton {
+    padding: 10px 25px; /* Adjust padding */
+    margin: 5px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: auto; /* Adjust width to fit text */
+    flex: 1; /* Equal width for all buttons */
+    height: 45px; /* Same height as the Add Symptom button */
+    font-size: 14px; /* Font size */
+    background-color: #4CAF50; /* Green color */
+}
+
+#diseasePrediction, #diseaseDescription, #diseaseCures {
+    width: 100%;
+    max-width: 600px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the divs */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

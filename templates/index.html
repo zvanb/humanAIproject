@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Illness Predictor</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
     <h1>Illness Predictor</h1>
 
-    <input type="text" id="symptomInput" list="symptomsList" placeholder="Search for a symptom">
+    <!-- <input type="text" id="symptomInput" list="symptomsList" placeholder="Search for a symptom"> -->
+    
+    <div class="input-container">
+        <input type="text" id="symptomInput" list="symptomsList" placeholder="Search">
+        <button type="button" id="addSymptomButton">Add</button>
+        <button id="refreshButton">Clear</button>
+    </div>
+    
     <datalist id="symptomsList">
         <!-- List of symptoms -->
     </datalist>
 
-    <button type="button" id="addSymptomButton">Add Symptom</button>
+    <!-- <button type="button" id="addSymptomButton">Add Symptom</button>
 
-    <button id="refreshButton">Clear Symptoms</button>
+    <button id="refreshButton">Clear Symptoms</button> -->
 
     <div>
         <h3>Selected Symptoms:</h3>
@@ -27,9 +35,13 @@
         <!-- disease prediction -->
     </div>
 
+    <br>
+
     <div id="diseaseDescription">
         <!-- disease Description -->
     </div>
+
+    <br>
 
     <div id="diseaseCures">
         <!-- disease cures -->
