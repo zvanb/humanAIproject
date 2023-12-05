@@ -16,7 +16,7 @@ const descDic = {'Drug Reaction': 'An adverse drug reaction (ADR) is an injury c
 
 //Window alert for good AI design principle
 function showAlert() {
-    alert("The results of this model should be confirmed by a doctor. This tool is meant as a guide for you and not a final diagnosis.");
+    alert("This application predicts your illness based on the symptoms you provide. The results of this model should be confirmed by a doctor. This tool is meant as a guide and not a final diagnosis.");
   }
 
 window.onload = showAlert;
